@@ -1,0 +1,380 @@
+/* Reset default styles */
+  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+
+body {
+  font-family:'Times New Roman', Times, serif;
+  background-color: #1e1e2f;
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Trạng thái ban đầu của body */
+body {
+    opacity: 0;
+    transform: translateY(10px); /* Dịch nhẹ xuống dưới để tạo hiệu ứng nổi lên */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Lớp này sẽ được JS thêm vào để kích hoạt hiệu ứng */
+body.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Sidebar */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+h2,
+h3 {
+  color: #fff;
+}
+.sidebar {
+  width: 220px;
+  background: #004466;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  box-shadow: 3px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+
+.sidebar a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px;
+  margin: 10px 0;
+  transition: 0.3s;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+.sidebar a:hover {
+  background: #00aabb;
+}
+
+/* Main Content */
+
+main {
+  margin-left: 220px;
+  width: calc(100% - 220px);
+  margin-left: 240px;
+  padding: 20px;
+  width: 100%;
+}
+
+.hero {
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: url("./Img/Banner.jpg")
+    no-repeat center center/cover;
+  position: relative;
+}
+
+
+.hero::after {
+  content:normal;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  color:#fff;
+}
+
+
+audio{
+  display: block;
+  margin-top: 30px;
+}
+
+section {
+  padding: 20px 20px;
+  text-align: center;
+  color: #00d9ff;
+}
+
+
+section h2 {
+  font-size: 2.5rem;
+  color: #00d9ff;
+  margin-bottom: 20px;
+}
+
+
+section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: auto;
+  color: white;
+}
+
+
+.introduction{
+  margin-top: 10px;
+  text-align:justify;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  color:white;
+}
+
+.achievements {
+  margin-top: 30px;
+  text-align: left;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.achievements h3 {
+  color: #61dafb;
+  margin-top: 20px;
+}
+
+
+.achievements ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+
+.achievements li {
+  margin-bottom: 10px;
+  color: white;
+}
+
+/* Xóa gạch chân & đổi màu mặc định */
+a {
+  text-decoration: none;
+  color: rgb(35, 116, 238); /* Màu bình thường */
+  font-size: 15px;
+  font-family: "Times New Roman", serif;
+  transition: color 0.3s ease; /* Hiệu ứng mượt */
+}
+
+.year-header {
+  font-size: 40px;
+  font-weight: bold;
+  color: #007BFF;
+  text-align: center;
+  background-color: #f0f8ff;
+  padding: 15px;
+  border-radius: 10px;
+  display: block;
+  margin: 40px 0 20px 0;
+}
+
+.title {
+  font-size: 28px;
+  color: #FF5733; /* Màu mặc định cho tiêu đề */
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 30px;
+}
+        
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+  margin-bottom: 40px;
+}
+        
+.image-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: -webkit-transform 0.1s ease
+}
+
+.image-grid img:hover{
+  transform: scale(2.2);
+  -webkit-transform: scale(2.2);
+  -ms-transform: scale(2.2);
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+h1 { 
+  text-align: center; color: #333; 
+}
+
+/* Khi di chuột vào, đổi màu */
+a:hover {
+  color: orange; /* Đổi thành màu đỏ */
+}
+
+table a:hover {
+  color: orange;
+}
+
+/* Lia đến menu nào hiện màu đỏ đánh dấu */
+table a:hover {
+  color: orange;
+}
+
+table a.active {
+  color: red; /* Màu khi đang ở trang đó */
+}
+
+table {
+  margin: auto;
+  border-collapse: collapse;
+  width: 90%;
+  max-width: 800px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
+
+.content table{
+  margin-top: 40px;
+}
+
+
+table,
+th,
+td {
+  border: 1px solid #61dafb;
+}
+
+
+th,
+td {
+  font-size: 1 rem;;
+  padding: 10px;
+  text-align: center;
+}
+
+
+th {
+  background-color: #0f4c75;
+}
+
+
+tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+
+tr:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+/*Footer*/
+.footer {
+  background-color: #184e72;;
+  padding: 40px 400px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.footer-about h3 {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+}
+
+.footer-about p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ccc; /* màu xám nhạt dễ đọc hơn trên nền đen */
+}
+
+.footer-about h3,
+.footer-social h3 {
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 15px;
+}
+.footer-about a {
+  color: #4acaff;
+  text-decoration: none;
+}
+.footer-social {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.footer-social a {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: 0.3s;
+}
+.footer-social a:hover {
+  background: #4acaff;
+  color: black;
+}
+.footer-bottom {
+  background: #e7e3e3;
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+  border-top: 1px solid #333;
+}
+.footer-bottom a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
